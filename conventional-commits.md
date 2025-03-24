@@ -1,4 +1,4 @@
-# Padrão de Commits
+# Convenção de commit
 
 Este documento define um padrão de commits para manter um histórico de commits organizado e compreensível.
 
