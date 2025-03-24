@@ -2,5 +2,5 @@
 
 Documentos relacionados a padrões desenvolvimento e afins.
 
-- [Padrão de Commits](./conventional-commits.md)
-- [Padrões de Desenvolvimento](./developer-conventions.md)
+- [Convenção de commit](./conventional-commits.md)
+- [Padrões de desenvolvimento](./developer-conventions.md)
