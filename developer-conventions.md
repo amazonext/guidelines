@@ -51,8 +51,8 @@ Exemplo: `numeroDeUsuarios`, `nomeCompleto`.
 ### Controle de Versão
 - Utilize um sistema de controle de versão como Git.
 - Realize commits pequenos e significativos.
-- Siga padrões de commits (por exemplo, conforme descrito em [Padrão de Commits]("./conventional-commits.md
-")).
+- Siga padrões de commits (por exemplo, conforme descrito em [Padrão de Commits](./conventional-commits.md
+)).
 - Faça uso de branches (*main*, por exemplo) para novas funcionalidades e correções.
 
 ## 4. Revisões de Código (Code Review)
