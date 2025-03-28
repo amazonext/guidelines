@@ -1,4 +1,4 @@
-# Aside
+# Diretrizes de desenvolvimento de projetos
 
 Documentos relacionados a padrões desenvolvimento e afins.
 
