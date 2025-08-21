@@ -1,62 +1,74 @@
-# Convenção de commit
+# Convenção de Commits
 
-Este documento define um padrão de commits para manter um histórico de commits organizado e compreensível.
+Este documento define um padrão de commits para manter um histórico de commits organizado e compreensível. A convenção de commits garante clareza, rastreabilidade e comunicação eficaz entre desenvolvedores.
 
-## Convenção de Commits
+## Objetivos
 
-Os commits devem seguir a seguinte estrutura:
+* Facilitar a leitura do histórico de mudanças.
+* Permitir geração automatizada de changelogs.
+* Ajudar na identificação rápida de correções, novas features e breaking changes.
+* Melhorar a comunicação entre times de desenvolvimento.
 
-```
-tipo(escopo): mensagem
-```
+---
 
-- **tipo**: Define o tipo da alteração.
-- **escopo** (opcional): Indica a parte do sistema afetada.
-- **mensagem**: Breve descrição da alteração.
+## Estrutura do Commit
 
-### Tipos de Commits
+Um commit deve seguir o formato:
 
-Os commits devem ser classificados de acordo com o tipo da alteração:
-
-- **feat**: Adiciona uma nova funcionalidade.
-- **fix**: Corrige um bug.
-- **docs**: Atualizações na documentação.
-- **style**: Mudanças que não afetam a lógica (espaçamento, formatação, etc.).
-- **refactor**: Refatoração do código sem alterar funcionalidade.
-- **perf**: Melhoria de desempenho.
-- **test**: Adiciona ou modifica testes.
-- **chore**: Tarefas gerais (builds, dependências, scripts, etc.).
-- **revert**: Reverte um commit anterior.
-- **build**: Mudanças que afetam o sistema de build ou dependências externas.
-- **ci**: Mudanças nos processos de integração contínua.
-- **security**: Correções e melhorias relacionadas à segurança.
-- **deploy**: Mudanças relacionadas a processos de deploy.
-
-### Exemplos de Commits
-
-``` bash
-git commit -m "feat(auth): adicionar login com Google"
-git commit -m "fix(api): corrigir erro ao buscar usuário"
-git commit -m "docs(readme): adicionar guia de instalação"
-git commit -m "style(css): ajustar espaçamento de botoes"
-git commit -m "refactor(database): otimizar consulta de usuários"
-git commit -m "test(api): adicionar testes para rota de login"
-git commit -m "chore(deps): atualizar dependências"
-git commit -m "revert: reverter commit 123abc"
-git commit -m "build(webpack): atualizar configuração do Webpack"
-git commit -m "ci(actions): adicionar workflow de testes automatizados"
-git commit -m "wip(dashboard): iniciar desenvolvimento do painel de controle"
-git commit -m "hotfix(login): corrigir falha crítica na autenticação"
-git commit -m "security(api): corrigir vulnerabilidade de injeção de SQL"
-git commit -m "deploy(server): configurar variáveis de ambiente para produção"
+```text
+<tipo>(<escopo>): <descrição breve>
 ```
 
-### Regras Adicionais
+* **tipo** → categoria da mudança.
+* **escopo** → (opcional) parte do sistema afetada.
+* **descrição breve** → explicação curta e direta.
 
-- A mensagem deve ser escrita no **imperativo** (ex.: "adicionar" ao invés de "adicionado").
-- O escopo é opcional, mas recomendável para maior clareza.
-- Commits devem ser pequenos e focados em uma única mudança.
+Exemplo:
 
-## Links
-1. [Conventional Commits](https://www.conventionalcommits.org/pt-br/v1.0.0/)
-2. [Conventional Commits Pattern](https://medium.com/linkapi-solutions/conventional-commits-pattern-3778d1a1e657)
+```text
+feat(auth): adiciona fluxo de login com JWT
+```
+
+---
+
+## Tipos de Commits
+
+| Tipo         | Uso                                                      |
+| ------------ | -------------------------------------------------------- |
+| **feat**     | Implementação de nova funcionalidade.                    |
+| **fix**      | Correção de bugs.                                        |
+| **docs**     | Alterações na documentação.                              |
+| **style**    | Ajustes de formatação, sem impacto no código.            |
+| **refactor** | Refatoração de código sem alterar comportamento.         |
+| **test**     | Adição ou modificação de testes.                         |
+| **chore**    | Tarefas auxiliares (build, configs, dependências, etc.). |
+| **perf**     | Alterações relacionadas a desempenho.                    |
+| **ci**       | Ajustes de integração contínua.                          |
+
+---
+
+## Commits Especiais
+
+* **BREAKING CHANGE** → mudanças que quebram compatibilidade.
+  Exemplo:
+
+```
+feat(api): altera endpoint de /login para /auth/login
+
+BREAKING CHANGE: clientes devem atualizar a rota de autenticação.
+```
+
+* **Revert** → quando um commit desfaz outro.
+  Exemplo:
+
+```
+revert: "feat(auth): adiciona fluxo de login com JWT"
+```
+
+---
+
+## Boas Práticas
+
+* Escreva descrições curtas e objetivas (máx. 72 caracteres).
+* Use verbos no **imperativo** (ex: "adiciona", e não "adicionado").
+* Commits pequenos e focados em uma única mudança.
