@@ -3,4 +3,4 @@
 Documentos relacionados a padrões desenvolvimento e afins.
 
 - [Convenção de commit](./conventional-commits.md)
-- [Padrões de desenvolvimento](./developer-conventions.md)
+- [Convenção de branches e PRs](./conventional-branches.md)
